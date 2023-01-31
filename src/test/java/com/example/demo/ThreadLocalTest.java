@@ -16,10 +16,9 @@ public class ThreadLocalTest {
         new Thread(()->{
             threadLocal.set("a");
             new Thread(()->{
-
-                System.out.println(Thread.currentThread().getName());
-                System.out.println(threadLocal.get());
+                System.out.println(Thread.currentThread().getName()+"_"+threadLocal.get());
             },"s3").start();
+            System.out.println(Thread.currentThread().getName()+"_"+threadLocal.get());
         },"s1").start();
 
 //        new Thread(()->{
